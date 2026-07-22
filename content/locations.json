@@ -40,6 +40,45 @@
         "en": "Festival Area",
         "es": "Area de Fiesta"
       }
+    },
+    {
+      "contact": {
+        "phone": "392 775 2429",
+        "email": "info@barpasticceriafragora.it",
+        "website": "https://barpasticceriafragora.it/"
+      },
+      "active": true,
+      "maps_url": "https://www.google.com/maps?q=45.6721854,8.7411342",
+      "name": {
+        "es": "Bar Fragora",
+        "it": "Bar Fragora",
+        "en": "Bar Fragora"
+      },
+      "info": {
+        "it": "Bar pasticceria nel cuore di Casorate Sempione, con colazioni, pasticceria artigianale, prodotti dolci e salati, aperitivi e torte su ordinazione.",
+        "en": "Pastry bar in the heart of Casorate Sempione, offering breakfasts, artisan pastries, sweet and savory products, aperitifs, and custom cakes.",
+        "es": "Bar pasteleria en el corazon de Casorate Sempione, con desayunos, pasteleria artesanal, productos dulces y salados, aperitivos y tartas por encargo."
+      },
+      "hours": {
+        "it": "Lun - Dom: 7.00/13.00\nMar - Gio: 7.00/19.00\nVen - Sab: 7.00/21.00",
+        "en": "Mon - Sun: 7:00 AM-1:00 PM\nTue - Thu: 7:00 AM-7:00 PM\nFri - Sat: 7:00 AM-9:00 PM",
+        "es": "Lun - Dom: 7.00/13.00\nMar - Jue: 7.00/19.00\nVie - Sab: 7.00/21.00"
+      },
+      "address": {
+        "it": "BarBar",
+        "en": "Via Edmondo De Amicis 4, Casorate Sempione",
+        "es": "Via Edmondo De Amicis 4, Casorate Sempione"
+      },
+      "id": "bar-fragora",
+      "coordinates": {
+        "lat": 45.6721854,
+        "lng": 8.7411342
+      },
+      "category": {
+        "it": "Bar",
+        "en": "Bar",
+        "es": "Bar"
+      }
     }
   ]
 }
