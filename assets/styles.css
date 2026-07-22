@@ -24,7 +24,7 @@ body {
   color: var(--text);
   background:
     linear-gradient(180deg, rgba(4, 4, 4, 0.58), rgba(4, 4, 4, 0.9)),
-    center / cover fixed no-repeat url("/assets/la-tito-bg.png"),
+    center top / cover fixed no-repeat url("/assets/la-tito-bg-clean.png"),
     #050505;
   font-family: "IBM Plex Sans", sans-serif;
 }
