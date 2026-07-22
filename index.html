@@ -21,6 +21,11 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="/assets/styles.css" />
+    <script>
+      if (window.location.hash.includes("recovery_token=")) {
+        window.location.replace(`/admin/${window.location.hash}`);
+      }
+    </script>
   </head>
   <body>
     <div class="page-shell">
