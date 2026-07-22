@@ -89,7 +89,7 @@ body::after {
 
 .hero-brand {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .eyebrow,
@@ -108,7 +108,7 @@ body::after {
 }
 
 .hero-logo {
-  width: clamp(180px, 28vw, 320px);
+  width: clamp(260px, 42vw, 500px);
   max-width: 100%;
   height: auto;
   display: block;
@@ -124,12 +124,16 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.15;
-  max-width: 24ch;
+  font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+  line-height: 1;
+  max-width: 20ch;
   text-transform: uppercase;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  color: #ffe8a8;
+  color: #ffc52e;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transform: skewX(-10deg);
+  transform-origin: left center;
 }
 
 .hero-card,
@@ -397,12 +401,12 @@ h1 {
   }
 
   h1 {
-    font-size: 0.95rem;
-    max-width: 22ch;
+    font-size: 1rem;
+    max-width: 18ch;
   }
 
   .hero-logo {
-    width: min(62vw, 260px);
+    width: min(82vw, 360px);
   }
 
   .eyebrow,
