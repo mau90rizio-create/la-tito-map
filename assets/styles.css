@@ -108,7 +108,7 @@ body::after {
 }
 
 .hero-logo {
-  width: clamp(260px, 42vw, 500px);
+  width: clamp(340px, 56vw, 620px);
   max-width: 100%;
   height: auto;
   display: block;
@@ -406,7 +406,7 @@ h1 {
   }
 
   .hero-logo {
-    width: min(82vw, 360px);
+    width: min(92vw, 430px);
   }
 
   .eyebrow,
