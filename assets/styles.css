@@ -364,7 +364,7 @@ h1 {
 
   .page-shell {
     width: min(100% - 16px, 1120px);
-    padding-top: 16px;
+    padding: 12px 0 96px;
   }
 
   .hero,
@@ -373,7 +373,96 @@ h1 {
     border-radius: 22px;
   }
 
+  .hero,
+  .map-section {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+    max-width: 9ch;
+  }
+
+  .eyebrow,
+  .hero-kicker,
+  .sheet-eyebrow {
+    margin-bottom: 6px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .language-switcher {
+    width: 100%;
+    justify-content: space-between;
+    padding: 6px;
+  }
+
+  .language-switcher button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 10px;
+  }
+
+  .hero-card {
+    margin-top: 18px;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .hero-copy h2 {
+    font-size: 2rem;
+    line-height: 1.04;
+  }
+
+  .hero-copy p,
+  .section-copy,
+  .sheet-address,
+  .sheet-grid p,
+  .support-note {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    padding: 14px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .primary-link,
+  .action-button,
+  .ghost-button {
+    width: 100%;
+    min-height: 56px;
+    padding: 14px 16px;
+  }
+
+  .map-section {
+    margin-top: 16px;
+  }
+
   .map-frame {
-    height: 60vh;
+    height: 52vh;
+    min-height: 360px;
+    border-radius: 18px;
+  }
+
+  .sheet-inner {
+    width: min(100% - 12px, 760px);
+    padding: 18px;
+    border-radius: 24px 24px 18px 18px;
+  }
+
+  .sheet-grid section {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .sheet-actions {
+    flex-direction: column;
+  }
+
+  .map-frame {
+    height: 52vh;
   }
 }
