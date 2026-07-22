@@ -154,9 +154,7 @@ h1 {
 }
 
 .hero-card {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 20px;
+  display: block;
   padding: 20px;
   border-radius: 22px;
   background:
@@ -174,25 +172,12 @@ h1 {
 .hero-copy p,
 .section-copy,
 .sheet-address,
-.sheet-grid p,
-.support-note {
+.sheet-grid p {
   margin: 0;
   line-height: 1.55;
   color: var(--muted);
 }
 
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 18px;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.primary-link,
 .action-button,
 .ghost-button,
 .language-switcher button {
@@ -202,7 +187,6 @@ h1 {
   font: inherit;
 }
 
-.primary-link,
 .action-button {
   display: inline-flex;
   justify-content: center;
@@ -266,54 +250,115 @@ h1 {
   border: 1px solid rgba(255, 236, 189, 0.18);
 }
 
+.beer-marker {
+  background: transparent;
+  border: 0;
+}
+
 .custom-pin {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 18px 18px 18px 6px;
   background: linear-gradient(180deg, #ffe58b, #f0b41e);
   border: 3px solid #101214;
-  box-shadow: 0 10px 24px rgba(240, 161, 31, 0.38);
-  font-size: 22px;
+  box-shadow: 0 12px 24px rgba(240, 161, 31, 0.32);
+  transform: rotate(-45deg);
+}
+
+.custom-pin::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 14px 14px 14px 4px;
+  border: 1px solid rgba(255, 248, 214, 0.42);
+}
+
+.custom-pin-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  transform: rotate(45deg);
+  filter: saturate(1.08);
 }
 
 .sheet {
   position: fixed;
-  inset: auto 0 0;
-  transform: translateY(calc(100% + 24px));
-  transition: transform 220ms ease;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease, visibility 180ms ease;
   z-index: 1000;
+  padding: 56px 0 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.6));
+  pointer-events: none;
 }
 
 .sheet.is-open {
-  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .sheet-inner {
   width: min(760px, calc(100% - 20px));
-  margin: 0 auto 10px;
-  padding: 22px;
+  max-height: calc(100dvh - 68px);
+  margin: auto auto 10px;
+  padding: 22px 22px 26px;
   border-radius: 28px 28px 20px 20px;
   background:
     linear-gradient(145deg, rgba(255, 197, 46, 0.08), rgba(154, 31, 82, 0.08) 45%, rgba(11, 95, 105, 0.08)),
     rgba(11, 13, 14, 0.94);
   box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.44);
   border: 1px solid rgba(255, 236, 189, 0.14);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateY(24px);
+  transition: transform 220ms ease;
+  position: relative;
+}
+
+.sheet.is-open .sheet-inner {
+  transform: translateY(0);
 }
 
 .sheet-close {
   position: absolute;
   right: 18px;
-  top: 12px;
+  top: 10px;
   width: 42px;
   height: 42px;
   border-radius: 50%;
   border: 0;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(11, 13, 14, 0.9);
   color: var(--text);
   font-size: 24px;
   cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
+}
+
+.sheet > .sheet-close {
+  display: none;
+}
+
+.sheet-close-inline {
+  top: 16px;
+}
+
+.sheet-handle {
+  width: 68px;
+  height: 6px;
+  border-radius: 999px;
+  margin: 0 auto 18px;
+  background: rgba(255, 236, 189, 0.28);
 }
 
 .sheet-photo {
@@ -455,19 +500,11 @@ h1 {
   .hero-copy p,
   .section-copy,
   .sheet-address,
-  .sheet-grid p,
-  .support-note {
+  .sheet-grid p {
     font-size: 1.05rem;
     line-height: 1.6;
   }
 
-  .hero-actions {
-    padding: 14px;
-    gap: 14px;
-    border-radius: 16px;
-  }
-
-  .primary-link,
   .action-button,
   .ghost-button {
     width: 100%;
@@ -487,8 +524,13 @@ h1 {
 
   .sheet-inner {
     width: min(100% - 12px, 760px);
-    padding: 18px;
+    max-height: calc(100dvh - 20px);
+    padding: 18px 18px 22px;
     border-radius: 24px 24px 18px 18px;
+  }
+
+  .sheet {
+    padding-top: 20px;
   }
 
   .sheet-grid section {

@@ -4,6 +4,7 @@ const state = {
   locations: [],
   map: null,
   markers: [],
+  touchStartY: 0,
 };
 
 const translations = {
@@ -41,13 +42,11 @@ const el = {
   beerHeading: document.getElementById("beer-heading"),
   beerTitle: document.getElementById("beer-title"),
   beerDescription: document.getElementById("beer-description"),
-  heroCta: document.getElementById("hero-cta"),
-  heroSupport: document.getElementById("hero-support"),
   mapEyebrow: document.getElementById("map-eyebrow"),
   mapTitle: document.getElementById("map-title"),
   mapSubtitle: document.getElementById("map-subtitle"),
   sheet: document.getElementById("location-sheet"),
-  sheetClose: document.getElementById("sheet-close"),
+  sheetCloseButtons: [...document.querySelectorAll(".sheet-close")],
   sheetPhoto: document.getElementById("sheet-photo"),
   sheetCategory: document.getElementById("sheet-category"),
   sheetName: document.getElementById("sheet-name"),
@@ -85,8 +84,6 @@ function renderSiteText() {
   el.beerHeading.textContent = copy.inFocus;
   el.beerTitle.textContent = getText(site.beer.title);
   el.beerDescription.textContent = getText(site.beer.description);
-  el.heroCta.textContent = getText(site.hero.cta);
-  el.heroSupport.textContent = getText(site.hero.support);
   el.mapEyebrow.textContent = copy.mapEyebrow;
   el.mapTitle.textContent = getText(site.map.title);
   el.mapSubtitle.textContent = getText(site.map.subtitle);
@@ -102,6 +99,17 @@ function createMarkerIcon() {
     iconSize: [42, 42],
     iconAnchor: [21, 21],
     popupAnchor: [0, -20],
+  });
+}
+
+function createBeerMarkerIcon() {
+  return L.divIcon({
+    className: "beer-marker",
+    html:
+      '<div class="custom-pin" aria-hidden="true"><span class="custom-pin-inner">&#127866;</span></div>',
+    iconSize: [44, 56],
+    iconAnchor: [22, 48],
+    popupAnchor: [0, -34],
   });
 }
 
@@ -128,7 +136,7 @@ function renderMap() {
     .filter((location) => location.active)
     .forEach((location) => {
       const marker = L.marker([location.coordinates.lat, location.coordinates.lng], {
-        icon: createMarkerIcon(),
+        icon: createBeerMarkerIcon(),
       }).addTo(state.map);
 
       marker.on("click", () => openSheet(location));
@@ -188,15 +196,46 @@ function openSheet(location) {
 
   el.sheet.classList.add("is-open");
   el.sheet.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
 function closeSheet() {
   el.sheet.classList.remove("is-open");
   el.sheet.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
 
 function bindEvents() {
-  el.sheetClose.addEventListener("click", closeSheet);
+  el.sheetCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeSheet);
+  });
+  el.sheet.addEventListener("click", (event) => {
+    if (event.target === el.sheet) {
+      closeSheet();
+    }
+  });
+  el.sheet.addEventListener(
+    "touchstart",
+    (event) => {
+      state.touchStartY = event.touches[0]?.clientY || 0;
+    },
+    { passive: true }
+  );
+  el.sheet.addEventListener(
+    "touchend",
+    (event) => {
+      const endY = event.changedTouches[0]?.clientY || 0;
+      if (endY - state.touchStartY > 72) {
+        closeSheet();
+      }
+    },
+    { passive: true }
+  );
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && el.sheet.classList.contains("is-open")) {
+      closeSheet();
+    }
+  });
 
   el.languageButtons.forEach((button) => {
     button.addEventListener("click", () => {
