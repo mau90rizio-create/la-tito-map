@@ -1,14 +1,16 @@
 :root {
-  --bg: #f2eadc;
-  --panel: rgba(255, 248, 238, 0.92);
-  --panel-strong: #fff8ee;
-  --text: #1e1713;
-  --muted: #6d5847;
-  --accent: #a93d18;
-  --accent-strong: #7c2508;
-  --gold: #d8a627;
-  --line: rgba(30, 23, 19, 0.12);
-  --shadow: 0 24px 48px rgba(77, 45, 18, 0.14);
+  --bg: #050505;
+  --panel: rgba(10, 13, 14, 0.76);
+  --panel-strong: rgba(15, 18, 20, 0.84);
+  --text: #f6eed7;
+  --muted: #d3c7af;
+  --accent: #ffc52e;
+  --accent-strong: #f09a19;
+  --teal: #0b5f69;
+  --berry: #9a1f52;
+  --gold: #f0b52d;
+  --line: rgba(255, 236, 189, 0.14);
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -21,8 +23,9 @@ body {
   min-height: 100%;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(216, 166, 39, 0.32), transparent 30%),
-    linear-gradient(180deg, #f8efe4 0%, #efe3d0 100%);
+    linear-gradient(180deg, rgba(4, 4, 4, 0.58), rgba(4, 4, 4, 0.9)),
+    center / cover fixed no-repeat url("/assets/la-tito-bg.png"),
+    #050505;
   font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -35,11 +38,23 @@ body::before {
   inset: 0;
   content: "";
   pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(255, 197, 46, 0.22), transparent 20%),
+    radial-gradient(circle at 78% 20%, rgba(154, 31, 82, 0.18), transparent 24%),
+    radial-gradient(circle at 60% 78%, rgba(11, 95, 105, 0.2), transparent 24%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.48));
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  content: "";
+  pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 75%);
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 80%);
 }
 
 .page-shell {
@@ -51,14 +66,16 @@ body::before {
 .hero,
 .map-section,
 .sheet-inner {
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(18px);
 }
 
 .hero {
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: var(--panel);
+  background:
+    linear-gradient(135deg, rgba(255, 197, 46, 0.12), rgba(154, 31, 82, 0.08) 42%, rgba(11, 95, 105, 0.14)),
+    var(--panel);
   box-shadow: var(--shadow);
 }
 
@@ -93,6 +110,8 @@ h1 {
   font-size: clamp(2rem, 5vw, 3.6rem);
   line-height: 0.95;
   max-width: 11ch;
+  text-transform: uppercase;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero-card,
@@ -107,14 +126,15 @@ h1 {
   padding: 20px;
   border-radius: 22px;
   background:
-    linear-gradient(135deg, rgba(255, 220, 148, 0.24), rgba(169, 61, 24, 0.08)),
+    linear-gradient(130deg, rgba(255, 197, 46, 0.12), rgba(11, 95, 105, 0.18) 38%, rgba(154, 31, 82, 0.16)),
     var(--panel-strong);
-  border: 1px solid rgba(169, 61, 24, 0.14);
+  border: 1px solid rgba(255, 197, 46, 0.14);
 }
 
 .hero-copy h2 {
   font-size: clamp(1.4rem, 3vw, 2.2rem);
   margin-bottom: 12px;
+  color: #ffd772;
 }
 
 .hero-copy p,
@@ -134,7 +154,8 @@ h1 {
   gap: 18px;
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.56);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .primary-link,
@@ -154,9 +175,10 @@ h1 {
   align-items: center;
   padding: 14px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #fff6eb;
+  background: linear-gradient(135deg, #ffd04a, #f0a11f);
+  color: #101214;
   font-weight: 700;
+  box-shadow: 0 14px 28px rgba(240, 161, 31, 0.24);
 }
 
 .ghost-button {
@@ -167,7 +189,7 @@ h1 {
   border-radius: 999px;
   border: 1px solid var(--line);
   color: var(--text);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .language-switcher {
@@ -175,7 +197,7 @@ h1 {
   gap: 8px;
   padding: 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(8, 10, 10, 0.6);
   border: 1px solid var(--line);
 }
 
@@ -188,7 +210,7 @@ h1 {
 }
 
 .language-switcher button.is-active {
-  background: var(--text);
+  background: linear-gradient(135deg, var(--teal), #107b88);
   color: white;
 }
 
@@ -196,7 +218,9 @@ h1 {
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: var(--panel);
+  background:
+    linear-gradient(160deg, rgba(11, 95, 105, 0.12), rgba(154, 31, 82, 0.12)),
+    var(--panel);
   box-shadow: var(--shadow);
 }
 
@@ -205,7 +229,7 @@ h1 {
   height: min(70vh, 720px);
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid rgba(30, 23, 19, 0.08);
+  border: 1px solid rgba(255, 236, 189, 0.18);
 }
 
 .custom-pin {
@@ -214,9 +238,9 @@ h1 {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #fff4bf, #f0af16);
-  border: 3px solid #7c2508;
-  box-shadow: 0 10px 18px rgba(124, 37, 8, 0.28);
+  background: linear-gradient(180deg, #ffe58b, #f0b41e);
+  border: 3px solid #101214;
+  box-shadow: 0 10px 24px rgba(240, 161, 31, 0.38);
   font-size: 22px;
 }
 
@@ -237,9 +261,11 @@ h1 {
   margin: 0 auto 10px;
   padding: 22px;
   border-radius: 28px 28px 20px 20px;
-  background: rgba(255, 249, 242, 0.97);
-  box-shadow: 0 -12px 40px rgba(58, 29, 8, 0.22);
-  border: 1px solid rgba(30, 23, 19, 0.1);
+  background:
+    linear-gradient(145deg, rgba(255, 197, 46, 0.08), rgba(154, 31, 82, 0.08) 45%, rgba(11, 95, 105, 0.08)),
+    rgba(11, 13, 14, 0.94);
+  box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.44);
+  border: 1px solid rgba(255, 236, 189, 0.14);
 }
 
 .sheet-close {
@@ -250,7 +276,7 @@ h1 {
   height: 42px;
   border-radius: 50%;
   border: 0;
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   font-size: 24px;
   cursor: pointer;
@@ -278,8 +304,8 @@ h1 {
 .sheet-grid section {
   padding: 16px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(30, 23, 19, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 236, 189, 0.1);
 }
 
 .sheet-grid h4 {
@@ -293,7 +319,7 @@ h1 {
 }
 
 .contact-list a {
-  color: var(--accent-strong);
+  color: #ffd772;
   word-break: break-word;
 }
 
@@ -302,6 +328,27 @@ h1 {
   gap: 12px;
   margin-top: 20px;
   flex-wrap: wrap;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(11, 13, 14, 0.88) !important;
+  color: #ffe8a8 !important;
+  border-bottom-color: rgba(255, 236, 189, 0.14) !important;
+}
+
+.leaflet-control-zoom,
+.leaflet-bar {
+  border: 1px solid rgba(255, 236, 189, 0.18) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(8, 10, 10, 0.72) !important;
+  color: rgba(255, 236, 189, 0.78) !important;
+}
+
+.leaflet-control-attribution a {
+  color: #ffd772 !important;
 }
 
 @media (max-width: 800px) {
