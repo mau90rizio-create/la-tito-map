@@ -89,8 +89,9 @@ body::after {
 
 .hero-brand {
   display: grid;
-  gap: 12px;
+  gap: 16px;
   justify-items: center;
+  width: 100%;
 }
 
 .eyebrow,
@@ -109,7 +110,7 @@ body::after {
 }
 
 .hero-logo {
-  width: clamp(420px, 68vw, 760px);
+  width: min(72vw, 620px);
   max-width: 100%;
   height: auto;
   display: block;
@@ -125,7 +126,7 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   line-height: 1;
   max-width: 20ch;
   text-transform: uppercase;
@@ -136,6 +137,15 @@ h1 {
   transform: skewX(-10deg);
   transform-origin: left center;
   text-align: center;
+}
+
+.hero .brand-row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero .language-switcher {
+  align-self: center;
 }
 
 .hero-card,
@@ -386,10 +396,6 @@ h1 {
     flex-direction: column;
   }
 
-  .brand-row {
-    align-items: center;
-  }
-
   .page-shell {
     width: min(100% - 16px, 1120px);
     padding: 12px 0 96px;
@@ -412,7 +418,7 @@ h1 {
   }
 
   .hero-logo {
-    width: min(96vw, 520px);
+    width: min(94vw, 430px);
   }
 
   .eyebrow,
