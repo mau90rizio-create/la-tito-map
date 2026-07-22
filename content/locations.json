@@ -1,0 +1,45 @@
+{
+  "locations": [
+    {
+      "id": "area-feste",
+      "active": true,
+      "category": {
+        "it": "Area Feste",
+        "en": "Festival Area",
+        "es": "Area de Fiesta"
+      },
+      "name": {
+        "it": "Area Feste",
+        "en": "Festival Area",
+        "es": "Area de Fiesta"
+      },
+      "address": {
+        "it": "Casorate Sempione, punto ufficiale La Tito",
+        "en": "Casorate Sempione, official La Tito venue",
+        "es": "Casorate Sempione, punto oficial La Tito"
+      },
+      "info": {
+        "it": "Birra ufficiale La Tito, cucina, musica live e area dedicata agli eventi della festa.",
+        "en": "Official La Tito beer, food service, live music, and a dedicated festival event area.",
+        "es": "Cerveza oficial La Tito, cocina, musica en vivo y area dedicada a los eventos de la fiesta."
+      },
+      "hours": {
+        "it": "Dal 5 al 15 settembre, ore 19:00-24:00",
+        "en": "From September 5 to September 15, 7:00 PM-12:00 AM",
+        "es": "Del 5 al 15 de septiembre, de 19:00 a 24:00"
+      },
+      "coordinates": {
+        "lat": 45.663861,
+        "lng": 8.75075
+      },
+      "contact": {
+        "phone": "+39 000 000 0000",
+        "email": "info@example.com",
+        "website": "https://example.netlify.app"
+      },
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=45.663861,8.750750",
+      "photo": "",
+      "menu_pdf": ""
+    }
+  ]
+}

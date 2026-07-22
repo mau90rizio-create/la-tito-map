@@ -1,0 +1,161 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: false
+publish_mode: simple
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+site_url: "https://example.netlify.app"
+display_url: "https://example.netlify.app"
+
+collections:
+  - name: "settings"
+    label: "Impostazioni sito"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Testi e mappa"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Titolo"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Pulsante"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Testo di supporto"
+                name: "support"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Espanol", name: "es", widget: "text" }
+          - label: "Descrizione birra"
+            name: "beer"
+            widget: "object"
+            fields:
+              - label: "Titolo"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Descrizione"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Espanol", name: "es", widget: "text" }
+          - label: "Mappa"
+            name: "map"
+            widget: "object"
+            fields:
+              - label: "Titolo"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Sottotitolo"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Espanol", name: "es", widget: "text" }
+              - label: "Centro mappa"
+                name: "center"
+                widget: "object"
+                fields:
+                  - { label: "Latitudine", name: "lat", widget: "number", value_type: "float" }
+                  - { label: "Longitudine", name: "lng", widget: "number", value_type: "float" }
+              - { label: "Zoom", name: "zoom", widget: "number", value_type: "int" }
+
+  - name: "locations"
+    label: "Locali"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "locations"
+        label: "Elenco locali"
+        file: "content/locations.json"
+        format: "json"
+        fields:
+          - label: "Locali"
+            name: "locations"
+            widget: "list"
+            summary: "{{fields.name.it}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Usa un identificatore breve, ad esempio area-feste" }
+              - { label: "Attivo", name: "active", widget: "boolean", default: true }
+              - label: "Categoria"
+                name: "category"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Nome locale"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Indirizzo"
+                name: "address"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Espanol", name: "es", widget: "string" }
+              - label: "Informazioni"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Espanol", name: "es", widget: "text" }
+              - label: "Orari"
+                name: "hours"
+                widget: "object"
+                fields:
+                  - { label: "Italiano", name: "it", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Espanol", name: "es", widget: "text" }
+              - label: "Coordinate"
+                name: "coordinates"
+                widget: "object"
+                fields:
+                  - { label: "Latitudine", name: "lat", widget: "number", value_type: "float" }
+                  - { label: "Longitudine", name: "lng", widget: "number", value_type: "float" }
+              - label: "Contatti"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Telefono", name: "phone", widget: "string", required: false }
+                  - { label: "Email", name: "email", widget: "string", required: false }
+                  - { label: "Sito web", name: "website", widget: "string", required: false }
+              - { label: "Link Google Maps", name: "maps_url", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image", required: false, allow_multiple: false }
+              - { label: "Menu PDF", name: "menu_pdf", widget: "file", required: false, media_library: { allow_multiple: false } }

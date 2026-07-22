@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": {
+      "it": "La birra ufficiale della Festa di San Tito",
+      "en": "The official beer of the Festa di San Tito",
+      "es": "La cerveza oficial de la Festa di San Tito"
+    },
+    "cta": {
+      "it": "Scopri la mappa",
+      "en": "Open the map",
+      "es": "Abrir el mapa"
+    },
+    "support": {
+      "it": "Apri il QR e vedi subito i locali aderenti, con accesso diretto a Google Maps.",
+      "en": "Scan the QR code and instantly view participating venues with direct Google Maps access.",
+      "es": "Escanea el QR y encuentra enseguida los locales adheridos con acceso directo a Google Maps."
+    }
+  },
+  "beer": {
+    "title": {
+      "it": "La Tito nasce per accompagnare i momenti piu belli della festa.",
+      "en": "La Tito is brewed to accompany the best moments of the festival.",
+      "es": "La Tito nace para acompanar los mejores momentos de la fiesta."
+    },
+    "description": {
+      "it": "Scopri dove degustarla, trova i locali aderenti e raggiungili con un tocco. Questa versione iniziale mette al centro la mappa, i contatti utili e le indicazioni stradali.",
+      "en": "Discover where to enjoy it, find participating venues, and reach them with a tap. This first version keeps the map, useful contacts, and directions front and center.",
+      "es": "Descubre donde degustarla, encuentra los locales adheridos y llega con un toque. Esta primera version pone en primer plano el mapa, los contactos utiles y las indicaciones."
+    }
+  },
+  "map": {
+    "title": {
+      "it": "Dove trovare La Tito",
+      "en": "Where to find La Tito",
+      "es": "Donde encontrar La Tito"
+    },
+    "subtitle": {
+      "it": "Tocca un boccale per aprire la scheda del locale con info, contatti, orari e pulsante per Google Maps.",
+      "en": "Tap a beer marker to open venue details with info, contacts, opening hours, and a Google Maps button.",
+      "es": "Toca un icono de cerveza para abrir la ficha del local con informacion, contactos, horarios y boton de Google Maps."
+    },
+    "center": {
+      "lat": 45.663861,
+      "lng": 8.75075
+    },
+    "zoom": 16
+  }
+}
