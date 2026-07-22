@@ -6,8 +6,8 @@ local_backend: false
 publish_mode: simple
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-site_url: "https://example.netlify.app"
-display_url: "https://example.netlify.app"
+site_url: "https://bright-rolypoly-7b0327.netlify.app"
+display_url: "https://bright-rolypoly-7b0327.netlify.app"
 
 collections:
   - name: "settings"
