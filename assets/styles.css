@@ -87,6 +87,22 @@ body::after {
   align-items: start;
 }
 
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-logo {
+  width: clamp(92px, 11vw, 132px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px;
+}
+
 .eyebrow,
 .hero-kicker,
 .sheet-eyebrow {
@@ -360,6 +376,10 @@ h1 {
   .brand-row,
   .section-heading {
     flex-direction: column;
+  }
+
+  .brand-block {
+    align-items: flex-start;
   }
 
   .page-shell {
